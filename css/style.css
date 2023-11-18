@@ -1,0 +1,82 @@
+body{
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+#content{
+    display: flex;
+}
+
+#info{
+    width: 50%;
+}
+
+#tasks{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+
+h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-size: 60px;
+}
+
+h2{
+    font-size: 40px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 2px;
+}
+
+#description{
+    width: 97%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    margin-right: 40px;
+}
+
+#task{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#add{
+    width: 98%;
+    border-radius: 3px;
+    padding: 8px;
+    color: #ffffff;
+    background-color:#33C3F0;
+    border-color: #33C3F0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    cursor:pointer; cursor: hand
+}
+
+.error {
+    background-color: red;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    max-width: 400px;
+    margin: 0 auto;
+    color: white;
+    margin-top: 20px;
+}
+
+.remove-task,
+.remove-task:hover {
+    float: right;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+#tasks-list{
+    width: 100%;
+}
