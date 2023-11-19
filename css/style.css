@@ -1,11 +1,16 @@
 body{
     width: 60%;
     margin: 0 auto;
+    background: url(../img/background.jpg) no-repeat center center fixed;
+    height: 100%;
 }
 
 
 #content{
     display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 #info{
@@ -47,11 +52,10 @@ h2{
 
 #add{
     width: 98%;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 8px;
-    color: #ffffff;
-    background-color:#33C3F0;
-    border-color: #33C3F0;
+    color: #000000;
+    background-color:rgb(255, 255, 255);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     cursor:pointer; cursor: hand
@@ -67,16 +71,36 @@ h2{
     margin: 0 auto;
     color: white;
     margin-top: 20px;
+    border-radius: 12px;
+    font-family: Arial;
 }
 
 .remove-task,
 .remove-task:hover {
     float: right;
     cursor: pointer;
-    color: red;
+    color: rgb(230, 24, 24);
     font-weight: bold;
+    background-color: #444342;
+    border-radius: 7px;
 }
 
 #tasks-list{
     width: 100%;
+}
+
+.item-task{
+    padding: 4px;
+    font-size: 20px;
+    font-family: Arial;
+    list-style: none;
+    margin-bottom: 5px;
+    border: 2px solid #12255D;
+    border-radius: 15px;
+}
+
+.main{
+    background-color: #d8e8f3;
+    border: 3px solid rgb(21, 21, 76);
+    border-radius: 10px;
 }

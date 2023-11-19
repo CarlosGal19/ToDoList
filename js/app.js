@@ -53,44 +53,48 @@ function addTask(e){
 }
 
 function showError(error){
+    // If there is a previous error, it is deleted to avoid repeating it
 
-    // If there is an error, it is created in the HTML, displayed and removed after 3 seconds
-    const messageError=document.createElement('p');
-    messageError.textContent=error;
-    messageError.classList.add('error');
+    const content = document.querySelector('#info');
+    let messageError = content.querySelector('.error');
 
-    const content=document.querySelector('.main');
+    // If the error message does not exist, it is created
+    if (!messageError) {
+        messageError = document.createElement('p');
+        messageError.classList.add('error');
+        content.appendChild(messageError);
+    }
 
-    content.appendChild(messageError);
+    // Updated error message
+    messageError.textContent = error;
 
+    // Remove error message after 3 seconds
     setTimeout(() => {
         messageError.remove();
     }, 3000);
 }
 
 function createHTML(){
-    // If there are tasks, the HTML is created
+    // If there is at least one task, the HTML is created
     if(tasks.length >= 0){
 
-        // The HTML is cleaned because if not, the tasks would be repeated
+        // Clean HTML because if there are tasks, they are displayed again
         cleanHTML();
 
-        // For each task, a list item is created with the task and a button to delete it
-        tasks.forEach(task => {
+        // For each task, a list item is created with its delete button
+        tasks.forEach((task, index) => {
             const btnDelete=document.createElement('a');
             btnDelete.classList.add('remove-task');
             btnDelete.textContent='X';
 
-            btnDelete.onclick= ()=>{
-                // The task is deleted when the button is clicked
+            btnDelete.onclick= ()=> {
+                // The task is deleted from the array
                 deleteTask(task.id);
             }
 
             const taskField=document.createElement('li');
-            taskField.textContent=task.task;
-            taskField.style.paddingBottom='10px';
-            taskField.style.fontSize='20px';
-            taskField.style.fontFamily='Arial';
+            taskField.textContent=`${index + 1}. ${task.task}`;
+            taskField.classList.add('item-task');
             list.appendChild(taskField);
             taskField.appendChild(btnDelete);
         });
